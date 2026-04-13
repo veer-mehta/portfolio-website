@@ -29,7 +29,7 @@ export default function Hero() {
 					</div>
 				</div>
 			</section>
-			<div className="hero-disclaimer" style={{ color: '#00fff5' }}>* it's just game of life with lerp</div>
+			<div className="hero-disclaimer">* it's just the game of life with lerp</div>
 		</>
 	);
 }
