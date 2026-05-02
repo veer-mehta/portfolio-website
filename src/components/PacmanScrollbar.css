@@ -1,0 +1,109 @@
+.pacman-scrollbar-container {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 16px;
+  height: 60vh;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Individual dots — integer pixels only to avoid subpixel rendering */
+.pacman-dot {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  margin-top: -2px;
+  background: var(--amber);
+  transition: opacity 0.15s ease;
+  image-rendering: pixelated;
+}
+
+.pacman-dot.eaten {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.pacman-dot.visible {
+  opacity: 1;
+  transform: scale(1);
+  animation: dot-respawn 0.3s steps(3) both;
+}
+
+@keyframes dot-respawn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pacman thumb */
+.pacman-thumb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -8px;
+  width: 16px;
+  height: 16px;
+  will-change: transform;
+}
+
+.pacman-sprite {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+}
+
+/* Only chomp while scrolling */
+.pacman-thumb.down.chomping .pacman-sprite {
+  animation: chomp-down 0.35s steps(1) infinite;
+}
+
+.pacman-thumb.up.chomping .pacman-sprite {
+  animation: chomp-up 0.35s steps(1) infinite;
+}
+
+/* Static open mouth when idle */
+.pacman-thumb.down.idle .pacman-sprite {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 8 L3 14 A7 7 0 1 1 13 14 Z" fill="%23ffae00"/></svg>');
+}
+
+.pacman-thumb.up.idle .pacman-sprite {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 8 L3 2 A7 7 0 1 0 13 2 Z" fill="%23ffae00"/></svg>');
+}
+
+/* Down-facing: triangular mouth at bottom */
+@keyframes chomp-down {
+  0%, 100% {
+    /* Open mouth: circle with 90° wedge cut at bottom */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 8 L3 14 A7 7 0 1 1 13 14 Z" fill="%23ffae00"/></svg>');
+  }
+  50% {
+    /* Closed mouth: full circle */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="%23ffae00"/></svg>');
+  }
+}
+
+/* Up-facing: triangular mouth at top */
+@keyframes chomp-up {
+  0%, 100% {
+    /* Open mouth: circle with 90° wedge cut at top */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 8 L3 2 A7 7 0 1 0 13 2 Z" fill="%23ffae00"/></svg>');
+  }
+  50% {
+    /* Closed mouth: full circle */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="%23ffae00"/></svg>');
+  }
+}

@@ -4,11 +4,13 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import PacmanScrollbar from './components/PacmanScrollbar';
 
 function App() {
   return (
     <>
       <div className="scanline-overlay" />
+      <PacmanScrollbar />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

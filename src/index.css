@@ -66,22 +66,13 @@ a:hover {
 	color: var(--bg-primary);
 }
 
-/* scrollbar */
+/* Hide native scrollbar completely */
+html {
+	scrollbar-width: none;
+}
 ::-webkit-scrollbar {
-	width: 8px;
-}
-
-::-webkit-scrollbar-track {
-	background: var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-	background: var(--dark-grey);
-	border: 2px solid var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: var(--green);
+	width: 0;
+	display: none;
 }
 
 /* ═══════════════════════════════════════════
