@@ -92,11 +92,11 @@ export default function Projects() {
 									</div>
 									<div className="expanded-links">
 										<a href={project.github} target="_blank" rel="noopener noreferrer" className="expanded-link github">
-											View Source ↗
+											Source
 										</a>
 										{project.demo && (
 											<a href={project.demo} target="_blank" rel="noopener noreferrer" className="expanded-link demo">
-												Live Demo ↗
+												Live
 											</a>
 										)}
 									</div>

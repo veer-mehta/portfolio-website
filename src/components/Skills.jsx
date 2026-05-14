@@ -90,6 +90,7 @@ export default function Skills() {
 						className={`skill-category-group ${group.isExpanded ? 'is-expanded' : ''} ${group.isCompact ? 'is-compact' : ''} ${group.isRightAligned ? 'is-right' : ''}`}
 					>
 						<div className="category-header">
+							<span className="category-index">{String(idx + 1).padStart(2, '0')}</span>
 							<h3 className="category-name">{group.category}</h3>
 						</div>
 						

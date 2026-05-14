@@ -49,9 +49,9 @@ export default function Navbar() {
             to="/"
             className={`navbar-logo ${showLogo ? "visible" : ""}`}
             onClick={scrollToTop}
-            style={{ fontFamily: 'var(--font-pixel)' }}
+            style={{ fontFamily: 'var(--font-mono)' }}
           >
-            vm
+            vm.
           </Link>
         </div>
 

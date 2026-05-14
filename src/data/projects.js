@@ -1,5 +1,4 @@
 export const ALL_PROJECTS = [
-
 	{
 		id: 1,
 		title: 'h2cred',
@@ -14,30 +13,18 @@ export const ALL_PROJECTS = [
 	},
 	{
 		id: 2,
-		title: 'distributed-drive-client',
-		type: 'Backend / Networking',
-		shortDesc: 'A client for encrypted & distributed cloud storage.',
-		fullDesc: 'A Python-based solution for managing encrypted & distributed cloud file storage, providing efficient synchronization, retrieval & data integrity mechanisms across multiple nodes. Implements custom protocols for data integrity and node discovery.',
-		tech: ['Python', 'Flask', 'Google OAuth2', 'Google Drive API', 'Cryptography'],
-		github: 'https://github.com/veer-mehta/distributed-drive-client',
-		demo: null,
-		image: "/assets/distrdrive.png",
-		featured: true,
-	},
-	{
-		id: 3,
 		title: 'vim-arena',
 		type: 'Game Development',
 		shortDesc: 'A tower defense game where the battlefield is a Vim-like text editor.',
 		fullDesc: 'A tower defense game built with Phaser 3 and TypeScript where players use Vim keybindings to navigate and control the battlefield. It features a command-buffer combat system and grid-based tactical movement.',
 		tech: ['TypeScript', 'Phaser.js', 'Game Dev', 'Vim', 'React.js', 'MongoDB'],
 		github: 'https://github.com/veer-mehta/vim-arena',
-		demo: null,
+		demo: 'https://vim-arena.veermehta.dev',
 		image: "/assets/vimarena.png",
 		featured: true,
 	},
 	{
-		id: 4,
+		id: 3,
 		title: 'joqer-engine',
 		type: 'Machine Learning / Game Modding',
 		shortDesc: 'A RL agent that plays Balatro, trained with Double DQN.',
@@ -46,6 +33,18 @@ export const ALL_PROJECTS = [
 		github: 'https://github.com/veer-mehta/joqer-engine',
 		demo: null,
 		image: "/assets/joqermod.gif",
+		featured: true,
+	},
+	{
+		id: 4,
+		title: 'distributed-drive-client',
+		type: 'Backend / Networking',
+		shortDesc: 'A client for encrypted & distributed cloud storage.',
+		fullDesc: 'A Python-based solution for managing encrypted & distributed cloud file storage, providing efficient synchronization, retrieval & data integrity mechanisms across multiple nodes. Implements custom protocols for data integrity and node discovery.',
+		tech: ['Python', 'Flask', 'Google OAuth2', 'Google Drive API', 'Cryptography'],
+		github: 'https://github.com/veer-mehta/distributed-drive-client',
+		demo: null,
+		image: "/assets/distrdrive.png",
 		featured: true,
 	},
 	{

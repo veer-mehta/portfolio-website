@@ -38,11 +38,21 @@
 .category-header {
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.category-index {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--grey);
 }
 
 .category-name {
   font-family: var(--font-pixel);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: var(--white);
   text-transform: lowercase;
   opacity: 0.8;
@@ -115,21 +125,67 @@
 @media (max-width: 1024px) {
   .skills-grid-modern {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 48px;
+    margin-top: 40px;
+  }
+
+  .skill-category-group {
+    grid-column: 1 / -1 !important;
+    text-align: left !important;
+  }
+
+  .category-header,
+  .is-right .category-header {
+    justify-content: flex-start !important;
+  }
+
+  .is-right .skills-sub-grid {
+    justify-content: flex-start !important;
   }
 }
 
 @media (max-width: 768px) {
-  .skill-icon {
-    font-size: 2.8rem;
-  }
-  
-  .skills-sub-grid {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 20px;
+  .skills-section {
+    padding: 64px 20px;
   }
 
-  /* Disable cursor label on mobile as there is no cursor */
+  .category-header {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding-bottom: 12px;
+  }
+
+  .category-index {
+    font-size: 0.7rem;
+    opacity: 0.5;
+  }
+
+  .category-name {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .skills-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .skill-card {
+    width: 64px;
+    height: 64px;
+    background: transparent;
+    border: none;
+  }
+
+  .skill-icon {
+    font-size: 2.2rem;
+    opacity: 0.6;
+  }
+
   .skill-cursor-label {
     display: none;
   }

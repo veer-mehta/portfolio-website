@@ -66,29 +66,32 @@
 }
 
 @media (max-width: 768px) {
-
 	.about-block {
-		grid-template-columns: 42px 1fr;
-		gap: 18px;
-		padding: 28px 0;
+		display: grid;
+		grid-template-columns: 40px 1fr;
+		gap: 16px;
+		padding: 32px 0;
 	}
 
 	.about-block-index {
-		width: 28px;
-		height: 28px;
-		font-size: 0.65rem;
+		font-size: 0.7rem;
+		padding-top: 6px;
+		opacity: 0.5;
 	}
 
 	.about-block-heading {
-		font-size: 0.72rem;
+		font-size: 1.25rem;
+		margin: 0;
 	}
 
 	.about-block-body {
-		font-size: 0.9rem;
-		line-height: 1.85;
+		font-size: 1rem;
+		line-height: 1.7;
+		padding-right: 0;
 	}
 
 	.about-block:not(:last-child)::after {
-		left: 42px;
+		left: 0;
+		right: 0;
 	}
 }

@@ -279,16 +279,28 @@ html {
    RESPONSIVE
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  section {
-    padding: 60px 16px;
+  .section {
+    padding: 64px 20px;
   }
 
   .section-header-row {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    padding-top: 24px;
+    margin-bottom: 32px;
+    align-items: baseline;
+  }
+
+  .section-index {
+    position: relative;
+    top: 0;
+    font-size: 0.75rem;
+    margin-bottom: 0;
   }
 
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: 8px;
   }
 }

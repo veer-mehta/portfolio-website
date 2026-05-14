@@ -22,8 +22,9 @@
   align-items: center;
 }
 
+
 .navbar-logo {
-  font-family: var(--font-pixel);
+  font-family: var(--font-mono);
   font-size: 0.82rem;
   color: var(--white);
   letter-spacing: 1px;
