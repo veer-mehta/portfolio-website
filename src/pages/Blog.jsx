@@ -6,7 +6,13 @@ export default function Blog() {
 	return (
 		<main className="blog-page">
 			<div className="section">
-				<h1 className="section-title"><span>Writing</span></h1>
+				<header className="section-header-row">
+					<span className="section-index">WRITING</span>
+					<div>
+						<h1 className="section-title"><span>Blog</span></h1>
+					</div>
+				</header>
+
 				<div className="blog-list">
 					{BLOG_POSTS.map((post, i) => (
 						<article

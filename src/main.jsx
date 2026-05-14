@@ -6,7 +6,7 @@ import App from "./App.jsx";
 import { Honeybadger, HoneybadgerErrorBoundary } from "@honeybadger-io/react";
 
 const config = {
-  apiKey: "hbp_ZbUQXll6DNjQ6hYz2gtXWGzy4Qcw2M18oII6",
+  apiKey: import.meta.env.VITE_HONEYBADGER_API_KEY,
   environment: "production",
 };
 

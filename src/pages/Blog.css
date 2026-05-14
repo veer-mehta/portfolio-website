@@ -1,11 +1,8 @@
 .blog-page {
-  padding-top: 60px;
-}
-
-.blog-header {
-  margin-bottom: 32px;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+  padding-top: 120px;
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
 }
 
 .blog-list {
@@ -13,6 +10,7 @@
   flex-direction: column;
   gap: 0;
   border-top: 1px solid var(--border-color);
+  margin-top: 60px;
 }
 
 .blog-entry {

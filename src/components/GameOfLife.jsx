@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 
 const CELL_SIZE = 10;
-const CELL_ALPHA = 0.15;
 
 function createGrid(cols, rows) {
   const grid = [];
@@ -35,10 +34,6 @@ function stepLife(grid, cols, rows) {
   return next;
 }
 
-function cssRgbToCanvasRgb(value) {
-  return value.trim().split(/\s+/).join(', ');
-}
-
 export default function GameOfLife() {
   const canvasRef = useRef(null);
 
@@ -46,7 +41,6 @@ export default function GameOfLife() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const cellColor = cssRgbToCanvasRgb(getComputedStyle(document.documentElement).getPropertyValue('--green-rgb'));
 
     let cols, rows, current, display, animId;
     let lastStep = 0;
@@ -115,7 +109,7 @@ export default function GameOfLife() {
         for (let y = 0; y < rows; y++) {
           const val = display[idx(x, y, cols)];
           if (val > 0.01) {
-            ctx.fillStyle = `rgba(${cellColor}, ${val * CELL_ALPHA})`;
+            ctx.fillStyle = `rgba(34, 197, 94, ${val * 0.17})`;
             ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE - 1, CELL_SIZE - 1);
           }
         }

@@ -5,7 +5,10 @@
   right: 0;
   z-index: 1000;
   height: 56px;
-  background-color: rgb(var(--dark-grey-rgb) / 0.94);
+  background-color: rgb(var(--black-rgb) / 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(var(--white-rgb) / 0.08);
   transition: all 0.3s ease;
 }
 
@@ -20,7 +23,7 @@
 }
 
 .navbar-logo {
-  font-family: var(--font-mono);
+  font-family: var(--font-pixel);
   font-size: 0.82rem;
   color: var(--white);
   letter-spacing: 1px;
@@ -98,9 +101,11 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--bg-primary);
+    background-color: rgb(var(--dark-grey-rgb) / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 20px 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgb(var(--white-rgb) / 0.08);
     gap: 8px;
   }
 

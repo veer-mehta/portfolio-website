@@ -8,9 +8,6 @@ export default function Footer() {
 					<span className="text-green">vm.</span>
 					<span className="text-grey"> © 2026</span>
 				</p>
-				<p className="footer-sub text-grey">
-					Built with React.
-				</p>
 			</div>
 		</footer>
 	);

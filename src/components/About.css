@@ -1,123 +1,94 @@
-.about-card {
-  background: transparent;
-  padding: 0;
-  display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 1.1fr);
-  gap: 44px;
+.about-grid {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 100%;
+	position: relative;
 }
 
-.about-copy {
-  display: grid;
-  gap: 18px;
-  color: var(--white);
-  font-size: 0.94rem;
-  line-height: 1.8;
-  max-width: 840px;
+.about-block {
+	position: relative;
+	display: grid;
+	grid-template-columns: 72px 1fr;
+	gap: 24px;
+	padding: 24px 0;
+	transition: opacity 0.2s ease;
 }
 
-.about-content {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  line-height: 1.8;
+.about-block-index {
+	font-family: var(--font-mono);
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: var(--grey);
+	padding-top: 4px;
 }
 
-.about-skills {
-  grid-column: 1 / -1;
-  margin-top: 10px;
-  border-top: 1px solid var(--border-color);
-  padding-top: 28px;
+.about-block-content {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 
-.about-focus-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
+.about-block-heading {
+	font-family: var(--font-pixel);
+	font-size: 1.2rem;
+	font-weight: 550;
+	color: var(--secondary);
 }
 
-.about-focus-grid > div {
-  background: transparent;
-  padding: 0;
+.about-block-body {
+	font-family: var(--font-mono);
+	font-size: 1rem;
+	line-height: 1.7;
+	color: rgb(var(--white-rgb) / 0.68);
+	margin: 0;
+	max-width: 1050px;
+	text-align: left;
 }
 
-.focus-label {
-  color: var(--secondary);
-  display: block;
-  font-family: var(--font-pixel);
-  font-size: 1.06rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  text-transform: none;
+.about-block-body strong {
+	color: rgb(var(--white-rgb) / 0.92);
+	font-weight: 600;
 }
 
-.about-focus-grid p {
-  color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.6;
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.skill-tags::after {
-  content: "";
-  flex-grow: 100;
-}
-
-.skill-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-}
-
-.skill-icon-large {
-  font-size: 1.6rem;
-  color: var(--white);
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.8;
-  cursor: help;
-}
-
-.skill-icon-large:hover {
-  opacity: 1;
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.name-highlight {
-  background-color: transparent;
-  color: var(--tertiary);
-  padding: 0;
-  font-weight: bold;
-}
-
-.skills-title {
-  color: var(--white);
-  font-family: var(--font-pixel);
-  font-size: 1.06rem;
-  font-weight: 700;
-  margin-bottom: 22px;
+.about-block:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	left: 0; /* Align with the start of the section now that the circle is gone */
+	right: 0;
+	bottom: 0;
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		rgb(var(--white-rgb) / 0.08),
+		transparent 70%
+	);
 }
 
 @media (max-width: 768px) {
-  .about-card {
-    padding: 12px 0;
-    grid-template-columns: 1fr;
-  }
 
-  .about-focus-grid {
-    grid-template-columns: 1fr;
-  }
+	.about-block {
+		grid-template-columns: 42px 1fr;
+		gap: 18px;
+		padding: 28px 0;
+	}
 
-  .skill-icons {
-    gap: 18px;
-  }
+	.about-block-index {
+		width: 28px;
+		height: 28px;
+		font-size: 0.65rem;
+	}
+
+	.about-block-heading {
+		font-size: 0.72rem;
+	}
+
+	.about-block-body {
+		font-size: 0.9rem;
+		line-height: 1.85;
+	}
+
+	.about-block:not(:last-child)::after {
+		left: 42px;
+	}
 }

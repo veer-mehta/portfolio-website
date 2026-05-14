@@ -16,15 +16,12 @@ export default function Contact() {
 				<span className="section-index">04</span>
 				<div>
 					<h2 className="section-title"><span>Contact</span></h2>
-					<p className="section-kicker">
-						Internships, collaborations, or useful technical conversations.
-					</p>
 				</div>
 			</div>
 
 			<div className="contact-content">
-				<p className="contact-text" style={{ marginTop: '8px' }}>
-					<span className="text-grey">If the work here lines up with what you are building, reach out. I am open to focused work, small teams, and projects with real constraints.</span>
+				<p className="contact-text">
+					<span className="text-grey">If the work here lines up with what you are building, reach out. I am open to focused work and small teams.</span>
 				</p>
 
 				<div className="contact-links">

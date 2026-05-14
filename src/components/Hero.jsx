@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from "react-icons/fa";
 import GameOfLife from "./GameOfLife";
 import "./Hero.css";
 
@@ -24,16 +25,11 @@ export default function Hero() {
                 Veer Mehta
               </span>
             </h1>
-            <div className="hero-tagline">
-              <span className="tagline-text">
-                CS student building games, backend tools, and Linux experiments.
-              </span>
-            </div>
             <p className="hero-summary">
-              I spend a lot of time around building games, Linux, backend systems, and the
-              little details that make software feel solid. Most of my projects
-              start from curiosity, then turn into something I can build, break,
-              and make a little better.
+              I spend a lot of time around building games, Linux, backend
+              systems, and the little details that make software feel solid.
+              Most of my projects start from curiosity, then turn into something
+              I can build, break, and make a little better.
             </p>
             <div className="hero-console" aria-label="Quick profile">
               <div>
@@ -50,11 +46,27 @@ export default function Hero() {
               </div>
             </div>
             <div className="hero-actions">
-              <a href="#projects" className="hero-action primary">
-                Projects
+              <a
+                href="https://github.com/veer-mehta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-action primary"
+              >
+                <FaGithub /> github
               </a>
-              <a href="/blog" className="hero-action">
-                Writing
+              <a
+                href="https://linkedin.com/in/viirmehta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-action"
+              >
+                <FaLinkedin /> linkedin
+              </a>
+              <a href="mailto:veeramehta09@gmail.com" className="hero-action">
+                <FaEnvelope /> email
+              </a>
+              <a href="/VeerMehtaResume.pdf" download className="hero-action">
+                <FaFileAlt /> resume
               </a>
             </div>
           </div>

@@ -222,6 +222,9 @@
 }
 
 .hero-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
 	border: 1px solid var(--border-color);
 	background: transparent;
 	color: var(--white);
@@ -229,6 +232,7 @@
 	font-weight: 700;
 	padding: 10px 16px;
 	border-radius: 999px;
+	transition: all 0.3s ease;
 }
 
 .hero-action.primary {

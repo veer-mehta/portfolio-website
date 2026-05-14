@@ -1,67 +1,49 @@
-import { SiReact, SiNodedotjs, SiPython, SiJavascript, SiTypescript, SiMongodb, SiGit, SiLinux, SiCplusplus, SiSolidity } from 'react-icons/si';
 import './About.css';
 
-const SKILLS = [
-	{ name: 'React', icon: <SiReact /> },
-	{ name: 'Node.js', icon: <SiNodedotjs /> },
-	{ name: 'Python', icon: <SiPython /> },
-	{ name: 'JavaScript', icon: <SiJavascript /> },
-	{ name: 'TypeScript', icon: <SiTypescript /> },
-	{ name: 'MongoDB', icon: <SiMongodb /> },
-	{ name: 'Git', icon: <SiGit /> },
-	{ name: 'Linux', icon: <SiLinux /> },
-	{ name: 'C++', icon: <SiCplusplus /> },
-	{ name: 'Solidity', icon: <SiSolidity /> },
+const BLOCKS = [
+	{
+		index: "01",
+		heading: "who i am",
+		body: "I'm Veer, a CS student from Gandhinagar. I started building software because I wanted to see how things work under the surface. Most of my projects start with a small question and usually end up being a bit more complex than I first thought.",
+	},
+	{
+		index: "02",
+		heading: "what i'm into",
+		body: "I like to explore different things. Recently, I've been setting up a home server and trying out some game development and machine learning. I'm always looking for new things to learn.",
+	},
+	{
+		index: "03",
+		heading: "how i work",
+		body: "I've spent time working with everything from servers to UI. I try to keep my code simple and easy to maintain. I like building tools that solve real problems without making things over-complicated.",
+	},
+	{
+		index: "04",
+		heading: "what i can do",
+		body: "I can take a project from an idea to a working app. I handle the backend, servers, and the frontend. I try to keep my work practical and focused on whatever I'm trying to solve.",
+	},
 ];
 
-export default function About() {
+export default function About()
+{
 	return (
 		<section id="about" className="section">
 			<div className="section-header-row">
 				<span className="section-index">03</span>
 				<div>
 					<h2 className="section-title"><span>About</span></h2>
-					<p className="section-kicker">
-						A short version of what I care about in software.
-					</p>
 				</div>
 			</div>
 
-			<div className="about-card">
-				<div className="about-copy">
-					<p>
-						Hey, I&apos;m <span className="name-highlight">Veer Mehta</span>, a BTech CSE student from Gandhinagar, Gujarat.
-						I enjoy making small things that actually run, then sitting with the rough edges until I understand them better.
-					</p>
-					<p>
-						Lately that has meant game ideas, self-hosted services, backend code, and a few low-level experiments.
-						I am still early, so I focus on steady practice, clear notes, and projects that teach me something specific.
-					</p>
-				</div>
-				<div className="about-focus-grid">
-					<div>
-						<span className="focus-label">What I make</span>
-						<p>Small games, web apps, scripts, and server setups with a clear job.</p>
+			<div className="about-grid">
+				{BLOCKS.map(({ index, heading, body }) => (
+					<div key={index} className="about-block">
+						<span className="about-block-index">{index}</span>
+						<div className="about-block-content">
+							<strong className="about-block-heading">{heading}</strong>
+							<p className="about-block-body">{body}</p>
+						</div>
 					</div>
-					<div>
-						<span className="focus-label">What I am learning</span>
-						<p>Game loops, Linux administration, backend structure, and the basics of reinforcement learning.</p>
-					</div>
-					<div>
-						<span className="focus-label">What I am looking for</span>
-						<p>Internships or collaborations where I can contribute useful work and learn from careful engineers.</p>
-					</div>
-				</div>
-				<div className="about-skills">
-					<h3 className="skills-title">Tools I use</h3>
-					<div className="skill-icons">
-						{SKILLS.map((skill) => (
-							<span key={skill.name} className="skill-icon-large" title={skill.name}>
-								{skill.icon}
-							</span>
-						))}
-					</div>
-				</div>
+				))}
 			</div>
 		</section>
 	);
