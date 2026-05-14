@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@honeybadger-io/js": "^6.14.0",
+    "@honeybadger-io/react": "^6.1.27",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-icons": "^5.6.0",

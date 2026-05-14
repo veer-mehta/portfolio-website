@@ -17,27 +17,47 @@ const SKILLS = [
 export default function About() {
 	return (
 		<section id="about" className="section">
-			<h2 className="section-title">about_me</h2>
+			<div className="section-header-row">
+				<span className="section-index">03</span>
+				<div>
+					<h2 className="section-title"><span>About</span></h2>
+					<p className="section-kicker">
+						A short version of what I care about in software.
+					</p>
+				</div>
+			</div>
 
 			<div className="about-card">
-				<p>
-					Hey! I'm <span className="text-cyan">Veer</span>, a BTech CSE student from Gandhinagar, India.
-					I enjoy writing code and figuring out how computer systems work under the hood.
-				</p>
-				<br />
-				<p>
-					I like to explore a bit of everything. Lately, I've been spending my time setting up my own home server, experimenting with game development and machine learning. I'm always looking for something new and interesting to learn.
-				</p>
-				<br />
-				<div className="about-skills">
-					<p className="text-amber" style={{ fontSize: '0.85rem', marginBottom: '12px', letterSpacing: '1px' }}>
-              // tech_stack
+				<div className="about-copy">
+					<p>
+						Hey, I&apos;m <span className="name-highlight">Veer Mehta</span>, a BTech CSE student from Gandhinagar, Gujarat.
+						I enjoy making small things that actually run, then sitting with the rough edges until I understand them better.
 					</p>
-					<div className="skill-tags">
+					<p>
+						Lately that has meant game ideas, self-hosted services, backend code, and a few low-level experiments.
+						I am still early, so I focus on steady practice, clear notes, and projects that teach me something specific.
+					</p>
+				</div>
+				<div className="about-focus-grid">
+					<div>
+						<span className="focus-label">What I make</span>
+						<p>Small games, web apps, scripts, and server setups with a clear job.</p>
+					</div>
+					<div>
+						<span className="focus-label">What I am learning</span>
+						<p>Game loops, Linux administration, backend structure, and the basics of reinforcement learning.</p>
+					</div>
+					<div>
+						<span className="focus-label">What I am looking for</span>
+						<p>Internships or collaborations where I can contribute useful work and learn from careful engineers.</p>
+					</div>
+				</div>
+				<div className="about-skills">
+					<h3 className="skills-title">Tools I use</h3>
+					<div className="skill-icons">
 						{SKILLS.map((skill) => (
-							<span key={skill.name} className="skill-tag">
-								<span className="skill-icon">{skill.icon}</span>
-								{skill.name}
+							<span key={skill.name} className="skill-icon-large" title={skill.name}>
+								{skill.icon}
 							</span>
 						))}
 					</div>

@@ -11,17 +11,19 @@
 .blog-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
+  border-top: 1px solid var(--border-color);
 }
 
 .blog-entry {
   opacity: 0;
   background: transparent;
-  padding: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .blog-entry:hover {
-  background: rgba(94, 234, 212, 0.02);
+  background: transparent;
 }
 
 .blog-entry-content {
@@ -41,6 +43,7 @@
 .blog-date {
   font-family: var(--font-mono);
   font-size: 0.75rem;
+  color: var(--secondary);
 }
 
 .blog-tags {
@@ -51,15 +54,15 @@
 .blog-tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  padding: 3px 8px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--amber);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: var(--secondary);
 }
 
 .blog-title {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
+  font-family: var(--font-pixel);
+  font-size: 1.35rem;
   color: var(--white);
   font-weight: 700;
 }
@@ -67,7 +70,7 @@
 .blog-snippet {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--cyan);
+  color: var(--muted);
   line-height: 1.6;
 }
 
@@ -76,6 +79,7 @@
   font-size: 0.8rem;
   cursor: pointer;
   transition: opacity 0.2s;
+  border-bottom: 1px solid currentColor;
 }
 .blog-read-more:hover {
   opacity: 0.7;

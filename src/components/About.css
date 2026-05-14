@@ -1,6 +1,18 @@
 .about-card {
   background: transparent;
-  padding: 28px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 1.1fr);
+  gap: 44px;
+}
+
+.about-copy {
+  display: grid;
+  gap: 18px;
+  color: var(--white);
+  font-size: 0.94rem;
+  line-height: 1.8;
+  max-width: 840px;
 }
 
 .about-content {
@@ -9,15 +21,41 @@
   line-height: 1.8;
 }
 
-.about-terminal p {
-  color: var(--white);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  line-height: 1.8;
+.about-skills {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 28px;
 }
 
-.about-skills {
-  margin-top: 8px;
+.about-focus-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.about-focus-grid > div {
+  background: transparent;
+  padding: 0;
+}
+
+.focus-label {
+  color: var(--secondary);
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: 1.06rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: none;
+}
+
+.about-focus-grid p {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
 
 .skill-tags {
@@ -31,31 +69,55 @@
   flex-grow: 100;
 }
 
-.skill-tag {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 5px 12px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--white);
-  transition: all 0.2s;
-  cursor: default;
-  letter-spacing: 0.5px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  gap: 6px;
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
 }
 
-.skill-icon {
-  font-size: 1rem;
+.skill-icon-large {
+  font-size: 1.6rem;
+  color: var(--white);
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.8;
+  cursor: help;
 }
 
-.skill-tag:hover {
-  border-color: var(--green);
+.skill-icon-large:hover {
+  opacity: 1;
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.name-highlight {
+  background-color: transparent;
+  color: var(--tertiary);
+  padding: 0;
+  font-weight: bold;
+}
+
+.skills-title {
   color: var(--white);
+  font-family: var(--font-pixel);
+  font-size: 1.06rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    padding: 12px 0;
+    grid-template-columns: 1fr;
+  }
+
+  .about-focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-icons {
+    gap: 18px;
+  }
 }

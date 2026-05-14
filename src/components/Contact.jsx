@@ -1,23 +1,30 @@
 import './Contact.css';
 
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaFile, FaFileAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 
 const LINKS = [
 	{ label: 'github', href: 'https://github.com/veer-mehta', icon: <FaGithub /> },
 	{ label: 'linkedin', href: 'https://linkedin.com/in/viirmehta', icon: <FaLinkedin /> },
 	{ label: 'email', href: 'mailto:veeramehta09@gmail.com', icon: <FaEnvelope /> },
-	{ label: 'resume', href: '/Veer_Mehta_Resume.pdf', icon: <FaFileAlt />, download: 'Veer_Mehta_Resume.pdf' },
+	{ label: 'resume', href: '/VeerMehtaResume.pdf', icon: <FaFileAlt />, download: 'VeerMehtaResume.pdf' },
 ];
 
 export default function Contact() {
 	return (
 		<section id="contact" className="section">
-			<h2 className="section-title">contact</h2>
+			<div className="section-header-row">
+				<span className="section-index">04</span>
+				<div>
+					<h2 className="section-title"><span>Contact</span></h2>
+					<p className="section-kicker">
+						Internships, collaborations, or useful technical conversations.
+					</p>
+				</div>
+			</div>
 
 			<div className="contact-content">
 				<p className="contact-text" style={{ marginTop: '8px' }}>
-					<span className="text-grey">/* Want to collaborate, or just say hi?<br />
-						&nbsp;&nbsp;&nbsp;feel free to reach out */</span>
+					<span className="text-grey">If the work here lines up with what you are building, reach out. I am open to focused work, small teams, and projects with real constraints.</span>
 				</p>
 
 				<div className="contact-links">

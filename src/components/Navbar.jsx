@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 
 const NAV_ITEMS = [
@@ -28,6 +29,14 @@ export default function Navbar() {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, [location.pathname]);
 
+	const scrollToTop = (e) => {
+		if (location.pathname === '/') {
+			if (e) e.preventDefault();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+			setMenuOpen(false);
+		}
+	};
+
 	const scrollToSection = (id) => {
 		const el = document.getElementById(id);
 		if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -37,53 +46,82 @@ export default function Navbar() {
 	return (
 		<nav className="navbar">
 			<div className="navbar-inner">
-				<Link to="/" className={`navbar-logo pixel-font glitch-text ${showLogo ? 'visible' : ''}`} data-text="vm.">
-					vm.
-				</Link>
+				<div className="navbar-left">
+					<Link
+						to="/"
+						className={`navbar-logo ${showLogo ? 'visible' : ''}`}
+						data-text="vm."
+						onClick={scrollToTop}
+					>
+						vm.
+					</Link>
+				</div>
 
-				<button
-					className="navbar-toggle"
-					onClick={() => setMenuOpen(!menuOpen)}
-					aria-label="Toggle menu"
-				>
-					{menuOpen ? '[x]' : '[=]'}
-				</button>
-
-				<b>
-
-					<ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-						{location.pathname === '/' && (
-							<>
-								<li>
-									<button className="nav-link" onClick={() => scrollToSection('about')}>
-										About
-									</button>
-								</li>
-								<li>
-									<button className="nav-link" onClick={() => scrollToSection('projects')}>
-										Projects
-									</button>
-								</li>
-								<li>
-									<button className="nav-link" onClick={() => scrollToSection('contact')}>
-										Contact
-									</button>
-								</li>
-							</>
-						)}
-						{NAV_ITEMS.map((item) => (
+				<ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+					{location.pathname === '/' && (
+						<>
+							<li>
+								<button
+									className="nav-link"
+									onClick={scrollToTop}
+								>
+									home
+								</button>
+							</li>
+							<li>
+								<button className="nav-link" onClick={() => scrollToSection('about')}>
+									about
+								</button>
+							</li>
+							<li>
+								<button className="nav-link" onClick={() => scrollToSection('now')}>
+									now
+								</button>
+							</li>
+							<li>
+								<button className="nav-link" onClick={() => scrollToSection('projects')}>
+									projects
+								</button>
+							</li>
+							<li>
+								<button className="nav-link" onClick={() => scrollToSection('contact')}>
+									contact
+								</button>
+							</li>
+						</>
+					)}
+					{location.pathname !== '/' && (
+						<li>
+							<Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
+								home
+							</Link>
+						</li>
+					)}
+					{NAV_ITEMS.map((item) => {
+						if (item.path === '/') return null;
+						return (
 							<li key={item.path}>
 								<Link
 									to={item.path}
 									className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
 									onClick={() => setMenuOpen(false)}
 								>
-									{item.label}
+									{item.label.toLowerCase()}
 								</Link>
 							</li>
-						))}
-					</ul>
-				</b>
+						);
+					})}
+				</ul>
+
+				<div className="navbar-right">
+					<button
+						className="navbar-toggle"
+						onClick={() => setMenuOpen(!menuOpen)}
+						aria-label="Toggle menu"
+					>
+						{menuOpen ? <FaTimes /> : <FaBars />}
+					</button>
+				</div>
 			</div>
 		</nav>
 	);

@@ -30,8 +30,8 @@
 }
 
 .post-title {
-  font-family: var(--font-mono);
-  font-size: 1.8rem;
+  font-family: var(--font-pixel);
+  font-size: 2.1rem;
   font-weight: bold;
   color: var(--white);
   line-height: 1.4;
@@ -46,7 +46,7 @@
 .post-tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--amber);
+  color: var(--accent);
 }
 
 .post-content {
@@ -69,12 +69,12 @@
 }
 
 .post-content a {
-  color: var(--green);
+  color: var(--accent);
   text-decoration: underline;
 }
 
 .post-content a:hover {
-  text-shadow: var(--glow-green);
+  text-shadow: none;
 }
 
 @media (max-width: 768px) {

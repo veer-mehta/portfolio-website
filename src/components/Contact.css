@@ -1,7 +1,11 @@
 .contact-content {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
-  padding-left: 28px;
+  font-size: 1rem;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) 1fr;
+  gap: 36px;
+  align-items: start;
 }
 
 .contact-text {
@@ -11,17 +15,19 @@
 .contact-links {
   display: flex;
   gap: 16px;
-  margin-top: 32px;
+  margin-top: 0;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .contact-link {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 24px;
-  background: var(--bg-card);
-  border: var(--pixel-border);
+  padding: 10px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
   color: var(--white);
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -29,20 +35,25 @@
 }
 
 .contact-link:hover {
-  border-color: var(--cyan);
-  box-shadow: var(--glow-cyan);
-  color: var(--cyan);
+  border-color: var(--accent);
+  box-shadow: none;
+  color: var(--accent);
 }
 
 .contact-icon {
   font-size: 1.2rem;
-  color: var(--grey);
+  color: var(--tertiary);
   display: flex;
   align-items: center;
 }
 
 @media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
   .contact-links {
     flex-direction: column;
+    justify-content: flex-start;
   }
 }
