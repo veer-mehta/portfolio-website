@@ -231,7 +231,6 @@ html {
   width: 120px;
   height: 1px;
   background: var(--secondary);
-  animation: scanHeader 5s ease-in-out infinite;
 }
 
 .section-index {
@@ -262,18 +261,6 @@ html {
   padding: 0;
 }
 
-@keyframes scanHeader {
-  0%,
-  100% {
-    transform: translateX(0);
-    opacity: 0.35;
-  }
-
-  50% {
-    transform: translateX(420px);
-    opacity: 1;
-  }
-}
 
 /* ═══════════════════════════════════════════
    RESPONSIVE

@@ -15,16 +15,7 @@ export default function AllProjects() {
 	return (
 		<div className="all-projects-page">
 			<div className="section">
-				<header className="section-header-row">
-					<span className="section-index">ARCHIVE</span>
-					<div>
-						<h1 className="section-title"><span>All Projects</span></h1>
-						<p className="projects-sub">
-							A comprehensive list of experiments, tools, and games built over the years.
-						</p>
-					</div>
-				</header>
-
+				<h1 className="section-title"><span>All Projects</span></h1>
 				<nav className="filter-bar">
 					{categories.map((category) => (
 						<button
