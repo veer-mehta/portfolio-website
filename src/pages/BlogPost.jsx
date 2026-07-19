@@ -19,7 +19,7 @@ export default function BlogPost() {
 
   return (
     <main className="blog-post-page section">
-      <div className="blog-post-header anim-pixelIn">
+      <div className="blog-post-header">
         <Link to="/blog" className="back-link text-grey">
           Back to writing
         </Link>

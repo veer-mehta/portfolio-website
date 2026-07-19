@@ -1,49 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FEATURED_PROJECTS } from '../data/projects';
 import './Projects.css';
 
 export default function Projects() {
-	const [activeIndex, setActiveIndex] = useState(0);
-	const projectRefs = useRef([]);
-
-	useEffect(() => {
-		let rafId;
-		const handleScroll = () => {
-			rafId = requestAnimationFrame(() => {
-				const viewportCenter = window.innerHeight / 2;
-				let closestIndex = activeIndex;
-				let minDistance = Infinity;
-
-				projectRefs.current.forEach((ref, index) => {
-					if (ref) {
-						const mainRow = ref.querySelector('.project-entry-main');
-						const rect = (mainRow || ref).getBoundingClientRect();
-						const elementCenter = rect.top + rect.height / 2;
-						const distance = Math.abs(viewportCenter - elementCenter);
-
-						if (distance < minDistance) {
-							minDistance = distance;
-							closestIndex = index;
-						}
-					}
-				});
-
-				if (closestIndex !== activeIndex) {
-					setActiveIndex(closestIndex);
-				}
-			});
-		};
-
-		window.addEventListener('scroll', handleScroll, { passive: true });
-		handleScroll(); // Initial check
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-			cancelAnimationFrame(rafId);
-		};
-	}, [activeIndex]);
-
 	return (
 		<section id="projects" className="section projects-modern-view">
 			<div className="section-header-row">
@@ -57,8 +16,7 @@ export default function Projects() {
 				{FEATURED_PROJECTS.slice(0, 4).map((project, i) => (
 					<div 
 						key={project.id} 
-						ref={el => projectRefs.current[i] = el}
-						className={`project-entry ${activeIndex === i ? 'is-active' : ''}`}
+						className="project-entry"
 					>
 						<div className="project-entry-main">
 							<div className="entry-index">{String(i + 1).padStart(2, '0')}</div>
@@ -68,7 +26,6 @@ export default function Projects() {
 									<h3 className="entry-title">{project.title}</h3>
 									<span className="entry-category">{project.type}</span>
 								</div>
-								<p className="entry-short-desc">{project.shortDesc}</p>
 							</div>
 						</div>
 
@@ -86,10 +43,10 @@ export default function Projects() {
 								</div>
 								
 								<div className="expanded-details">
-									<p className="full-description">{project.fullDesc}</p>
 									<div className="expanded-tags">
 										{project.tech.map(t => <span key={t} className="tech-pill">{t}</span>)}
 									</div>
+									<p className="full-description">{project.fullDesc}</p>
 									<div className="expanded-links">
 										<a href={project.github} target="_blank" rel="noopener noreferrer" className="expanded-link github">
 											Source
@@ -123,7 +80,3 @@ export default function Projects() {
 		</section>
 	);
 }
-
-
-
-

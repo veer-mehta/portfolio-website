@@ -4,7 +4,7 @@ const BLOCKS = [
 	{
 		index: "01",
 		heading: "who i am",
-		body: "I'm Veer, a CS student from Gandhinagar. I started building software because I wanted to see how things work under the surface. Most of my projects start with a small question and usually end up being a bit more complex than I first thought.",
+		body: "I'm Veer, a CS student from Ahmedabad. I started building software because I wanted to see how things work under the surface. Most of my projects start with a small question and usually end up being a bit more complex than I first thought.",
 	},
 	{
 		index: "02",
@@ -23,8 +23,7 @@ const BLOCKS = [
 	},
 ];
 
-export default function About()
-{
+export default function About() {
 	return (
 		<section id="about" className="section">
 			<div className="section-header-row">

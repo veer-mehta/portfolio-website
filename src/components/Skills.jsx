@@ -1,12 +1,23 @@
-import { useState, useEffect } from 'react';
 import { 
 	SiPython, SiJavascript, SiTypescript, SiCplusplus, SiLua, SiReact, 
 	SiSolidity, SiLinux, SiGit, SiSelenium,
 	SiDocker, SiFirebase, SiDjango, SiFlask, SiMongodb, SiApachespark,
-	SiUnity, SiGodotengine, SiPostgresql, SiMysql, SiEthereum, SiGithub, SiPostman
+	SiUnity, SiGodotengine, SiEthereum, SiGithub, SiPostman
 } from 'react-icons/si';
-import { FaTerminal, FaCode, FaGlobe, FaLayerGroup, FaMicrochip, FaJava, FaMeteor, FaDatabase, FaGamepad } from 'react-icons/fa';
+import { FaTerminal, FaCode, FaGlobe, FaMeteor, FaDatabase, FaGamepad } from 'react-icons/fa';
 import './Skills.css';
+
+const SiFrappe = (props) => (
+	<svg 
+		viewBox="0 0 10 15" 
+		fill="currentColor" 
+		style={{ height: '1em', width: 'auto', display: 'inline-block' }}
+		{...props}
+	>
+		<path d="M0 0V2.46377H3.02086H8.83664H9.46424V0H0Z" />
+		<path d="M0 6.28906V14.0116H3.02086V8.75697H8.83663V6.28906H3.02086H0Z" />
+	</svg>
+);
 
 const SKILL_GROUPS = [
 	{
@@ -29,6 +40,7 @@ const SKILL_GROUPS = [
 			{ name: 'React', icon: <SiReact /> },
 			{ name: 'Django', icon: <SiDjango /> },
 			{ name: 'Flask', icon: <SiFlask /> },
+			{ name: 'Frappe', icon: <SiFrappe /> },
 			{ name: 'MongoDB', icon: <SiMongodb /> },
 			{ name: 'Firebase', icon: <SiFirebase /> },
 			{ name: 'SQL', icon: <FaDatabase /> },
@@ -63,17 +75,6 @@ const SKILL_GROUPS = [
 ];
 
 export default function Skills() {
-	const [hoveredSkill, setHoveredSkill] = useState(null);
-	const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-	useEffect(() => {
-		const handleMouseMove = (e) => {
-			setMousePos({ x: e.clientX, y: e.clientY });
-		};
-		window.addEventListener('mousemove', handleMouseMove);
-		return () => window.removeEventListener('mousemove', handleMouseMove);
-	}, []);
-
 	return (
 		<section id="skills" className="section skills-section">
 			<div className="section-header-row">
@@ -99,11 +100,10 @@ export default function Skills() {
 								<div 
 									key={skill.name} 
 									className="skill-card"
-									onMouseEnter={() => setHoveredSkill(skill.name)}
-									onMouseLeave={() => setHoveredSkill(null)}
 								>
 									<div className="skill-card-inner">
 										<span className="skill-icon">{skill.icon}</span>
+										<span className="skill-name">{skill.name}</span>
 									</div>
 								</div>
 							))}
@@ -111,19 +111,6 @@ export default function Skills() {
 					</div>
 				))}
 			</div>
-
-			{/* Cursor Follower Label */}
-			{hoveredSkill && (
-				<div 
-					className="skill-cursor-label"
-					style={{ 
-						left: `${mousePos.x + 20}px`, 
-						top: `${mousePos.y + 20}px` 
-					}}
-				>
-					{hoveredSkill}
-				</div>
-			)}
 		</section>
 	);
 }

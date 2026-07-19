@@ -48,11 +48,32 @@ export default function GameOfLife() {
     const LERP_SPEED = 0.04;
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      cols = Math.floor(canvas.width / CELL_SIZE);
-      rows = Math.floor(canvas.height / CELL_SIZE);
-      current = createGrid(cols, rows);
+      const newWidth = canvas.offsetWidth;
+      const newHeight = canvas.offsetHeight;
+      const newCols = Math.floor(newWidth / CELL_SIZE);
+      const newRows = Math.floor(newHeight / CELL_SIZE);
+
+      if (newCols === cols && newRows === rows) {
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        return;
+      }
+
+      const nextGrid = createGrid(newCols, newRows);
+
+      if (current && cols && rows) {
+        for (let x = 0; x < Math.min(cols, newCols); x++) {
+          for (let y = 0; y < Math.min(rows, newRows); y++) {
+            nextGrid[y * newCols + x] = current[y * cols + x];
+          }
+        }
+      }
+
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+      cols = newCols;
+      rows = newRows;
+      current = nextGrid;
       display = Float32Array.from(current);
     };
 
@@ -68,13 +89,11 @@ export default function GameOfLife() {
       const x = clientX - rect.left;
       const y = clientY - rect.top;
       
-      // If outside canvas bounds, ignore
       if (x < 0 || x > rect.width || y < 0 || y > rect.height) return;
 
       const gridX = Math.floor(x / CELL_SIZE);
       const gridY = Math.floor(y / CELL_SIZE);
       
-      // Spawn a random cluster around the cursor
       for (let dx = -2; dx <= 2; dx++) {
         for (let dy = -2; dy <= 2; dy++) {
           if (Math.random() > 0.4) continue;
@@ -83,7 +102,7 @@ export default function GameOfLife() {
           const index = idx(nx, ny, cols);
           if (index >= 0 && index < current.length) {
             current[index] = 1.0;
-            display[index] = 1.0; // Instantly visible
+            display[index] = 1.0;
           }
         }
       }
@@ -98,7 +117,6 @@ export default function GameOfLife() {
         current = stepLife(current, cols, rows);
       }
 
-      // lerp display toward current for smooth transitions
       for (let i = 0; i < display.length; i++) {
         display[i] += (current[i] - display[i]) * LERP_SPEED;
       }
@@ -109,7 +127,7 @@ export default function GameOfLife() {
         for (let y = 0; y < rows; y++) {
           const val = display[idx(x, y, cols)];
           if (val > 0.01) {
-            ctx.fillStyle = `rgba(34, 197, 94, ${val * 0.17})`;
+            ctx.fillStyle = `rgba(0, 255, 100, ${val * 0.16})`;
             ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE - 1, CELL_SIZE - 1);
           }
         }

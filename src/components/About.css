@@ -30,7 +30,7 @@
 }
 
 .about-block-heading {
-	font-family: var(--font-pixel);
+	font-family: var(--font-serif);
 	font-size: 1.2rem;
 	font-weight: 550;
 	color: var(--secondary);
@@ -54,15 +54,13 @@
 .about-block:not(:last-child)::after {
 	content: "";
 	position: absolute;
-	left: 0; /* Align with the start of the section now that the circle is gone */
+	left: 0;
 	right: 0;
 	bottom: 0;
 	height: 1px;
-	background: linear-gradient(
-		to right,
-		rgb(var(--white-rgb) / 0.08),
-		transparent 70%
-	);
+	background: linear-gradient(to right,
+			rgb(var(--white-rgb) / 0.08),
+			transparent 70%);
 }
 
 @media (max-width: 768px) {

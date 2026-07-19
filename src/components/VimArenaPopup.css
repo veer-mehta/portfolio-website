@@ -1,0 +1,161 @@
+.retro-popup-wrapper {
+	position: fixed;
+	top: 80px;
+	/* Positioned at top-right below navbar */
+	right: 24px;
+	z-index: 9999;
+	font-family: 'Press Start 2P', monospace;
+	animation: modern-slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.retro-popup {
+	width: 320px;
+	background: #000000;
+	border: 1px solid #222222;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+	padding: 0;
+}
+
+.retro-popup-header {
+	background: #090909;
+	border-bottom: 1px solid #222222;
+	color: #888888;
+	padding: 8px 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.retro-popup-title {
+	font-size: 9px;
+	color: #e3b55b;
+	font-weight: normal;
+	letter-spacing: 0.5px;
+	text-transform: lowercase;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.retro-popup-title:hover {
+	color: #ffffff;
+}
+
+.retro-popup-close {
+	background: transparent;
+	border: none;
+	color: #ff3333;
+	font-family: 'Press Start 2P', monospace;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 0;
+	line-height: 1;
+}
+
+.retro-popup-close:hover {
+	color: #e3b55b;
+}
+
+.retro-popup-body {
+	padding: 16px 12px;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	background: #000000;
+}
+
+.retro-popup-dot {
+	font-size: 8px;
+	color: #e3b55b;
+	animation: pulse-dot 1.5s infinite;
+}
+
+.retro-popup-content {
+	flex: 1;
+}
+
+.retro-popup-text {
+	font-size: 9px;
+	color: #888888;
+	/* Grey text */
+	line-height: 1.5;
+	margin: 0 0 6px 0;
+	text-transform: lowercase;
+}
+
+.retro-popup-text.subtitle {
+	color: #ffffff;
+	/* White highlighted text */
+	margin-bottom: 2px;
+}
+
+.retro-popup-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	padding: 0 12px 12px;
+	background: #000000;
+}
+
+.retro-btn {
+	background: transparent;
+	border: 1px solid #e3b55b;
+	color: #e3b55b;
+	font-family: 'Press Start 2P', monospace;
+	font-size: 9px;
+	padding: 8px 14px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.retro-btn:hover {
+	background: #e3b55b;
+	color: #000000;
+}
+
+.retro-btn.cancel {
+	border-color: #ff3333;
+	/* Thin red border for dismiss */
+	color: #ff3333;
+}
+
+.retro-btn.cancel:hover {
+	background: #ff3333;
+	color: #ffffff;
+}
+
+@keyframes modern-slide-in {
+	from {
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes pulse-dot {
+
+	0%,
+	100% {
+		opacity: 0.3;
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 480px) {
+	.retro-popup-wrapper {
+		left: 16px;
+		right: 16px;
+		top: 80px;
+		bottom: auto;
+	}
+
+	.retro-popup {
+		width: 100%;
+	}
+}
