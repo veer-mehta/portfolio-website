@@ -9,7 +9,7 @@ const MENU_ITEMS = [
 	{ id: "about", label: "about", sectionId: "about" },
 ];
 
-export default function Navbar({ onGameClick }) {
+export default function Navbar() {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [activeSection, setActiveSection] = useState("home");
@@ -106,11 +106,11 @@ export default function Navbar({ onGameClick }) {
 	};
 
 	return (
-		<nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+		<nav className={`navbar ${scrolled ? "navbar--scrolled" : ""} ${menuOpen ? "navbar--open" : ""}`}>
 			<div className="navbar-inner">
 				<Link
 					to="/"
-					className={`navbar-logo ${scrolled ? "visible" : ""}`}
+					className={`navbar-logo ${scrolled || menuOpen ? "visible" : ""}`}
 					onClick={handleLogoClick}
 				>
 					vm.
@@ -139,9 +139,14 @@ export default function Navbar({ onGameClick }) {
 						</li>
 					))}
 					<li className="navbar-game-li">
-						<button className="navbar-game-btn" onClick={onGameClick}>
+						<a 
+							href="https://vim-arena.veermehta.dev" 
+							target="_blank" 
+							rel="noopener noreferrer" 
+							className="navbar-game-btn"
+						>
 							play [vim-arena]
-						</button>
+						</a>
 					</li>
 				</ul>
 			</div>

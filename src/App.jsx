@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -6,11 +6,8 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import AllProjects from './pages/AllProjects';
-import VimArenaPopup from './components/VimArenaPopup';
 
 function App() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) {
@@ -33,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Navbar onGameClick={() => setIsPopupOpen(prev => !prev)} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
@@ -41,7 +38,6 @@ function App() {
         <Route path="/projects" element={<AllProjects />} />
       </Routes>
       <Footer />
-      <VimArenaPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>
   );
 }

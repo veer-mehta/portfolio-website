@@ -38,17 +38,18 @@
 
 .category-index {
 	font-family: var(--font-mono);
-	font-size: 0.78rem;
+	font-size: 0.85rem;
 	font-weight: 700;
 	color: var(--grey);
 }
 
 .category-name {
 	font-family: var(--font-serif);
-	font-size: 1.4rem;
+	font-size: 2rem;
+	font-weight: 700;
 	color: var(--white);
 	text-transform: lowercase;
-	opacity: 0.8;
+	opacity: 0.95;
 }
 
 .skills-sub-grid {
@@ -89,7 +90,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #333;
+	color: #666;
 	transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
 }
 
@@ -101,8 +102,9 @@
 
 .skill-name {
 	font-family: var(--font-mono);
-	font-size: 0.62rem;
-	color: #444;
+	font-size: 0.68rem;
+	font-weight: 700;
+	color: #666;
 	text-align: center;
 	transition: color 0.3s ease;
 	letter-spacing: 0.02em;
@@ -158,10 +160,12 @@
 	}
 
 	.skills-sub-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-		gap: 12px;
-		justify-content: flex-start;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		justify-content: center;
+		margin-left: 0;
+		width: 100%;
 	}
 
 	.skill-card {
@@ -177,5 +181,16 @@
 
 	.skill-name {
 		font-size: 0.55rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.skills-sub-grid {
+		gap: 12px;
+		justify-content: center;
+	}
+
+	.skill-card {
+		width: 56px;
 	}
 }

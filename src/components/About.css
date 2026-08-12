@@ -17,7 +17,7 @@
 
 .about-block-index {
 	font-family: var(--font-mono);
-	font-size: 0.78rem;
+	font-size: 0.85rem;
 	font-weight: 700;
 	color: var(--grey);
 	padding-top: 4px;
@@ -31,23 +31,23 @@
 
 .about-block-heading {
 	font-family: var(--font-serif);
-	font-size: 1.2rem;
-	font-weight: 550;
+	font-size: 1.28rem;
+	font-weight: 700;
 	color: var(--secondary);
 }
 
 .about-block-body {
 	font-family: var(--font-mono);
-	font-size: 1rem;
-	line-height: 1.7;
-	color: rgb(var(--white-rgb) / 0.68);
+	font-size: 1.08rem;
+	line-height: 1.8;
+	color: rgb(var(--white-rgb) / 0.78);
 	margin: 0;
 	max-width: 1050px;
 	text-align: left;
 }
 
 .about-block-body strong {
-	color: rgb(var(--white-rgb) / 0.92);
+	color: rgb(var(--white-rgb) / 0.95);
 	font-weight: 600;
 }
 
@@ -72,18 +72,18 @@
 	}
 
 	.about-block-index {
-		font-size: 0.7rem;
+		font-size: 0.75rem;
 		padding-top: 6px;
 		opacity: 0.5;
 	}
 
 	.about-block-heading {
-		font-size: 1.25rem;
+		font-size: 1.3rem;
 		margin: 0;
 	}
 
 	.about-block-body {
-		font-size: 1rem;
+		font-size: 1.05rem;
 		line-height: 1.7;
 		padding-right: 0;
 	}

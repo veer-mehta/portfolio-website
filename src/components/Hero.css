@@ -44,7 +44,8 @@
 	gap: 10px;
 	margin-bottom: 20px;
 	color: var(--tertiary);
-	font-size: 0.72rem;
+	font-family: var(--font-mono);
+	font-size: 0.82rem;
 	font-weight: 700;
 	text-transform: lowercase;
 }
@@ -76,9 +77,10 @@
 }
 
 .hero-summary {
+	font-family: var(--font-mono);
 	color: var(--muted);
-	font-size: 1.06rem;
-	line-height: 1.85;
+	font-size: 1.15rem;
+	line-height: 1.8;
 	max-width: 740px;
 	margin: 18px 0 0;
 }
@@ -101,16 +103,18 @@
 }
 
 .hero-console span {
+	font-family: var(--font-mono);
 	color: var(--grey);
-	font-size: 0.72rem;
+	font-size: 0.78rem;
 	font-weight: 700;
 	text-transform: lowercase;
 	letter-spacing: 0.05em;
 }
 
 .hero-console strong {
+	font-family: var(--font-mono);
 	color: var(--white);
-	font-size: 0.88rem;
+	font-size: 0.95rem;
 	font-weight: 700;
 	line-height: 1.4;
 	white-space: nowrap;
@@ -130,7 +134,8 @@
 	border: 1px solid var(--border-color);
 	background: transparent;
 	color: var(--white);
-	font-size: 0.82rem;
+	font-family: var(--font-mono);
+	font-size: 0.88rem;
 	font-weight: 700;
 	padding: 10px 16px;
 	border-radius: 999px;
@@ -157,43 +162,44 @@
 
 @media (max-width: 768px) {
 	.hero {
-		text-align: center;
+		text-align: left;
 		padding-top: 80px;
 	}
 
 	.hero-container {
-		padding: 100px 20px 60px;
+		padding: 90px 20px 60px;
 	}
 
 	.hero-eyebrow {
-		justify-content: center;
-		margin-bottom: 24px;
+		justify-content: flex-start;
+		margin-bottom: 20px;
 	}
 
 	.hero-name {
-		font-size: 3.8rem;
+		font-size: clamp(2.8rem, 11vw, 3.8rem);
 		margin-bottom: 16px;
+		word-break: break-word;
 	}
 
 	.hero-summary {
-		margin-left: auto;
-		margin-right: auto;
+		margin-left: 0;
+		margin-right: 0;
 		font-size: 0.95rem;
 		line-height: 1.7;
-		padding: 0 10px;
+		padding: 0;
 	}
 
 	.hero-console {
 		flex-direction: column;
-		gap: 24px;
+		gap: 20px;
 		text-align: left;
-		margin-top: 40px;
+		margin-top: 32px;
 	}
 
 	.hero-actions {
-		justify-content: center;
-		margin-top: 40px;
-		gap: 16px;
+		justify-content: flex-start;
+		margin-top: 32px;
+		gap: 12px;
 	}
 
 	.hero-action {

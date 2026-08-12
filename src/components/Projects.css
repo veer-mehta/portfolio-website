@@ -50,9 +50,11 @@
 .entry-title {
 	font-family: var(--font-serif);
 	font-size: clamp(2.8rem, 7vw, 5.5rem);
+	font-weight: 700;
 	color: var(--white);
 	line-height: 1.1;
 	margin: 0;
+	letter-spacing: 0;
 	transition: color 0.3s ease;
 }
 
@@ -63,16 +65,16 @@
 
 .entry-category {
 	font-family: var(--font-mono);
-	font-size: 0.75rem;
+	font-size: 0.78rem;
 	font-weight: 700;
 	color: var(--grey);
 	text-transform: uppercase;
-	letter-spacing: 0.3em;
+	letter-spacing: 0.25em;
 }
 
 .entry-short-desc {
 	font-family: var(--font-mono);
-	font-size: 1.1rem;
+	font-size: 1.15rem;
 	color: #666;
 	margin: 0;
 	max-width: 600px;
@@ -116,7 +118,7 @@
 	font-family: var(--font-mono);
 	font-size: 1.15rem;
 	color: #a0a0a0;
-	line-height: 1.6;
+	line-height: 1.75;
 	margin: 0;
 }
 
@@ -128,10 +130,11 @@
 
 .tech-pill {
 	font-family: var(--font-mono);
-	font-size: 0.74rem;
+	font-size: 0.78rem;
+	font-weight: 700;
 	color: #a0a0a0;
 	background: #1a1a1a;
-	padding: 6px 12px;
+	padding: 6px 14px;
 	border: 1px solid #2a2a2a;
 	border-radius: 0; /* Square block */
 	text-transform: lowercase;
@@ -156,7 +159,8 @@
 
 .expanded-link {
 	font-family: var(--font-mono);
-	font-size: 0.95rem;
+	font-size: 0.98rem;
+	font-weight: 700;
 	color: var(--white);
 	text-decoration: none;
 	border-bottom: 1px solid var(--border-color);
@@ -210,25 +214,69 @@
 
 	.expanded-inner {
 		grid-template-columns: 1fr;
-		gap: 32px;
-		padding-bottom: 40px;
+		gap: 24px;
+		padding: 16px 0 40px 0;
+		text-align: center;
+	}
+
+	.expanded-visual {
+		margin: 0 auto;
+		width: 100%;
 	}
 
 	.expanded-details {
-		gap: 32px;
+		gap: 20px;
+		align-items: center;
+		text-align: center;
+	}
+
+	.expanded-tags {
+		justify-content: center;
 	}
 
 	.full-description {
 		font-size: 1rem;
+		text-align: center;
+		margin: 0 auto;
 	}
 
 	.expanded-links {
-		flex-direction: column;
-		gap: 20px;
+		justify-content: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 24px;
 	}
 
 	.expanded-link {
 		width: fit-content;
+	}
+}
+
+@media (max-width: 480px) {
+	.expanded-inner {
+		padding: 12px 0 32px 0;
+	}
+
+	.entry-title {
+		font-size: 2.2rem;
+		word-break: break-word;
+	}
+
+	.expanded-details {
+		gap: 16px;
+	}
+
+	.expanded-tags {
+		gap: 8px;
+	}
+
+	.view-all-main {
+		grid-template-columns: 32px 1fr auto;
+		gap: 12px;
+	}
+
+	.view-all-title {
+		font-size: 1.5rem;
 	}
 }
 
@@ -261,9 +309,11 @@
 .view-all-title {
 	font-family: var(--font-serif);
 	font-size: clamp(1.8rem, 5vw, 3.2rem);
+	font-weight: 700;
 	color: var(--white);
 	margin: 0;
 	line-height: 1;
+	letter-spacing: 0;
 	text-transform: lowercase;
 	transition: all 0.4s ease;
 }
