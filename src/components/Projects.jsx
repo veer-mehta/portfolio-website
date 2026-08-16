@@ -45,7 +45,7 @@ export default function Projects() {
                     isRotate={false}
                     mouseInteraction={true}
                     pixelFilter={745.0}
-                    color1="#166534"
+                    color1="#0b3b19"
                     color2="#1e293b"
                     color3="#000000"
                     contrast={3.5}
@@ -111,11 +111,11 @@ export default function Projects() {
                                         <p className="full-description">{project.fullDesc}</p>
                                         <div className="expanded-links">
                                             <a href={project.github} target="_blank" rel="noopener noreferrer" className="expanded-link github">
-                                                Source
+                                                github
                                             </a>
                                             {project.demo && (
                                                 <a href={project.demo} target="_blank" rel="noopener noreferrer" className="expanded-link demo">
-                                                    Live
+                                                    try it
                                                 </a>
                                             )}
                                         </div>

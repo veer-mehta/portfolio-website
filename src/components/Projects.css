@@ -106,14 +106,6 @@
     letter-spacing: 0.25em;
 }
 
-.entry-short-desc {
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    color: #666;
-    margin: 0;
-    max-width: 600px;
-}
-
 .project-expanded-area {
     display: block;
 }
@@ -164,26 +156,34 @@
 
 .tech-pill {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #a0a0a0;
-    background: #1a1a1a;
-    padding: 6px 14px;
-    border: 1px solid #2a2a2a;
-    border-radius: 0; /* Square block */
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.45);
+    background: none;
+    padding: 0;
+    border: none;
     text-transform: lowercase;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: color 0.25s ease;
     display: inline-flex;
     align-items: center;
     cursor: default;
+    letter-spacing: 0.02em;
+    position: relative;
+}
+
+.tech-pill::after {
+    content: "·";
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.15);
+    font-weight: 400;
+}
+
+.tech-pill:last-child::after {
+    content: none;
 }
 
 .tech-pill:hover {
-    background: #22c55e; /* Green background */
-    border-color: #22c55e;
-    color: #000000; /* Black text */
-    box-shadow: 3px 3px 0px #14532d; /* Dark green flat shadow */
-    transform: translate(-3px, -3px);
+    color: var(--accent);
 }
 
 .expanded-links {
@@ -196,15 +196,15 @@
     font-size: 0.98rem;
     font-weight: 700;
     color: var(--white);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 4px;
-    transition: all 0.25s ease;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: rgba(255, 255, 255, 0.25);
+    transition: color 0.25s ease, text-decoration-color 0.25s ease;
 }
 
 .expanded-link:hover {
     color: var(--accent);
-    border-color: var(--accent);
+    text-decoration-color: var(--accent);
 }
 
 @media (max-width: 768px) {
@@ -240,10 +240,6 @@
     .entry-category {
         font-size: 0.65rem;
         letter-spacing: 0.2em;
-    }
-
-    .entry-short-desc {
-        font-size: 0.95rem;
     }
 
     .expanded-inner {

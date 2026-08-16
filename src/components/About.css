@@ -46,11 +46,6 @@
 	text-align: left;
 }
 
-.about-block-body strong {
-	color: rgb(var(--white-rgb) / 0.95);
-	font-weight: 600;
-}
-
 .about-block:not(:last-child)::after {
 	content: "";
 	position: absolute;
@@ -86,10 +81,5 @@
 		font-size: 1.05rem;
 		line-height: 1.7;
 		padding-right: 0;
-	}
-
-	.about-block:not(:last-child)::after {
-		left: 0;
-		right: 0;
 	}
 }

@@ -41,7 +41,7 @@ export const ALL_PROJECTS = [
 		type: 'Backend / Networking',
 		shortDesc: 'A client for encrypted & distributed cloud storage.',
 		fullDesc: 'A Python-based solution for managing encrypted & distributed cloud file storage, providing efficient synchronization, retrieval & data integrity mechanisms across multiple nodes. Implements custom protocols for data integrity and node discovery.',
-		tech: ['Python', 'Flask', 'Google OAuth2', 'Google Drive API', 'Cryptography'],
+		tech: ['Python', 'FastAPI', 'Google OAuth2', 'Google Drive API', 'Cryptography'],
 		github: 'https://github.com/veer-mehta/distributed-drive-client',
 		demo: null,
 		image: "/assets/distrdrive.png",

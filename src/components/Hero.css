@@ -58,10 +58,7 @@
 	padding: 6px 14px;
 	background: rgb(var(--black-rgb) / 0.36);
 	line-height: 1;
-	color: var(--tertiary);
-	font-family: var(--font-mono);
-	font-size: 0.82rem;
-	font-weight: 700;
+	color: var(--muted);
 	white-space: nowrap;
 	transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 	user-select: none;

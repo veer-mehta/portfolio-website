@@ -14,7 +14,7 @@ const BLOCKS = [
 	{
 		index: "03",
 		heading: "how i work",
-		body: "I've spent time working with everything from servers to UI. I try to keep my code simple and easy to maintain. I like building tools that solve real problems without making things over-complicated.",
+		body: "I've spent time working with everything from servers to UI. I try to keep my code simple and easy to maintain. I like building tools that solve real problems without making things more complicated than they need to be.",
 	},
 	{
 		index: "04",
@@ -25,9 +25,9 @@ const BLOCKS = [
 
 export default function About() {
 	return (
-		<section id="about" className="section">
+		<section id="about" className="section bg-dark-green">
 			<div className="section-header-row">
-				<span className="section-index">03</span>
+				<span className="section-index">04</span>
 				<div>
 					<h2 className="section-title"><span>About</span></h2>
 				</div>

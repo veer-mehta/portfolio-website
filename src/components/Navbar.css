@@ -216,23 +216,6 @@
   .nav-link::after {
     display: none;
   }
-
-  .navbar-game-li {
-    padding: 8px 0 2px;
-    width: 100%;
-    max-width: 100%;
-    opacity: 1;
-    pointer-events: auto;
-    margin-left: 0;
-  }
-
-  .navbar-game-btn {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    padding: 8px 12px 6px 12px;
-  }
 }
 
 @media (min-width: 769px) {
@@ -250,42 +233,4 @@
   .navbar--scrolled .navbar-links {
     transform: translate3d(0, 0, 0);
   }
-}
-
-.navbar-game-li {
-  display: flex;
-  align-items: center;
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
-  pointer-events: none;
-  transition: max-width 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, margin-left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-left: 0;
-}
-
-.navbar--scrolled .navbar-game-li {
-  max-width: 160px;
-  opacity: 1;
-  pointer-events: auto;
-  margin-left: 24px;
-}
-
-.navbar-game-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid #e3b55b;
-  color: #e3b55b;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 8px;
-  padding: 8px 12px 5px 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  line-height: 1;
-}
-
-.navbar-game-btn:hover {
-  background: #e3b55b;
-  color: #000000;
 }

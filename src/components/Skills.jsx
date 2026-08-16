@@ -4,7 +4,7 @@ import {
 	SiDocker, SiFirebase, SiDjango, SiFlask, SiMongodb, SiApachespark,
 	SiUnity, SiGodotengine, SiEthereum, SiGithub, SiPostman
 } from 'react-icons/si';
-import { FaTerminal, FaCode, FaGlobe, FaMeteor, FaDatabase, FaGamepad } from 'react-icons/fa';
+import { FaMeteor, FaDatabase } from 'react-icons/fa';
 import './Skills.css';
 
 const SiFrappe = (props) => (
@@ -22,7 +22,6 @@ const SiFrappe = (props) => (
 const SKILL_GROUPS = [
 	{
 		category: 'Languages',
-		icon: <FaCode />,
 		skills: [
 			{ name: 'Python', icon: <SiPython /> },
 			{ name: 'JavaScript', icon: <SiJavascript /> },
@@ -34,7 +33,6 @@ const SKILL_GROUPS = [
 	},
 	{
 		category: 'dev frameworks',
-		icon: <FaGlobe />,
 		isRightAligned: true,
 		skills: [
 			{ name: 'React', icon: <SiReact /> },
@@ -48,7 +46,6 @@ const SKILL_GROUPS = [
 	},
 	{
 		category: 'Game Engines',
-		icon: <FaGamepad />,
 		isCompact: true,
 		skills: [
 			{ name: 'Phaser.js', icon: <FaMeteor /> },
@@ -58,7 +55,6 @@ const SKILL_GROUPS = [
 	},
 	{
 		category: 'Misc',
-		icon: <FaTerminal />,
 		isExpanded: true,
 		isRightAligned: true,
 		skills: [
@@ -76,9 +72,9 @@ const SKILL_GROUPS = [
 
 export default function Skills() {
 	return (
-		<section id="skills" className="section skills-section bg-dark-green">
+		<section id="skills" className="section skills-section">
 			<div className="section-header-row">
-				<span className="section-index">02</span>
+				<span className="section-index">03</span>
 				<div>
 					<h2 className="section-title"><span>Skills</span></h2>
 				</div>

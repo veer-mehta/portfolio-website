@@ -1,0 +1,208 @@
+/* ── Experience Timeline ───────────────────── */
+
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 48px;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.exp-card:first-child {
+  border-top: none;
+}
+
+.exp-card:last-child {
+  border-bottom: none;
+}
+
+/* ── Year column ─────────────────────────── */
+
+.exp-year-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+}
+
+.exp-year {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  opacity: 0.2;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.exp-card:hover .exp-year {
+  opacity: 0.5;
+  color: var(--accent);
+}
+
+.exp-period {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--grey);
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+/* ── Content column ──────────────────────── */
+
+.exp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 2px;
+}
+
+.exp-headline {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 8px;
+  line-height: 1.5;
+}
+
+.exp-role {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--white);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.exp-at {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--grey);
+  opacity: 0.5;
+}
+
+.exp-company {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.exp-location {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--grey);
+  opacity: 0.6;
+}
+
+.exp-location::before {
+  content: "· ";
+  opacity: 0.4;
+}
+
+/* ── Bullet points ───────────────────────── */
+
+.exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-bullet {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.68);
+  position: relative;
+  padding-left: 16px;
+}
+
+.exp-bullet::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+/* ── Tech stack tags ─────────────────────── */
+
+.exp-stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 10px;
+  margin-top: 4px;
+}
+
+.exp-tech {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+  background: none;
+  padding: 0;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  transition: color 0.25s ease;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.exp-tech::after {
+  content: "·";
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: 400;
+}
+
+.exp-tech:last-child::after {
+  content: none;
+}
+
+.exp-tech:hover {
+  color: var(--accent);
+}
+
+/* ── Responsive ──────────────────────────── */
+
+@media (max-width: 768px) {
+  .exp-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 28px 0;
+  }
+
+  .exp-year-block {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .exp-year {
+    font-size: 2rem;
+  }
+
+  .exp-role {
+    font-size: 1.15rem;
+  }
+
+  .exp-bullet {
+    font-size: 0.8rem;
+  }
+}

@@ -5,9 +5,10 @@ import "./Navbar.css";
 const MENU_ITEMS = [
 	{ id: "home", label: "home", sectionId: "hero-section" },
 	{ id: "projects", label: "projects", sectionId: "projects" },
+	{ id: "experience", label: "experience", sectionId: "experience" },
 	{ id: "skills", label: "skills", sectionId: "skills" },
 	{ id: "about", label: "about", sectionId: "about" },
-	{ id: "contact", label: "contact", sectionId: "contact-form-section" },
+	{ id: "links", label: "links", sectionId: "links-section" },
 ];
 
 export default function Navbar() {
@@ -139,16 +140,6 @@ export default function Navbar() {
 							</a>
 						</li>
 					))}
-					<li className="navbar-game-li">
-						<a 
-							href="https://vim-arena.veermehta.dev" 
-							target="_blank" 
-							rel="noopener noreferrer" 
-							className="navbar-game-btn"
-						>
-							play [vim-arena]
-						</a>
-					</li>
 				</ul>
 			</div>
 		</nav>
