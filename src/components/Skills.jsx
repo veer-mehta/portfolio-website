@@ -76,7 +76,7 @@ const SKILL_GROUPS = [
 
 export default function Skills() {
 	return (
-		<section id="skills" className="section skills-section">
+		<section id="skills" className="section skills-section bg-dark-green">
 			<div className="section-header-row">
 				<span className="section-index">02</span>
 				<div>

@@ -1,0 +1,118 @@
+.contact-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 60px auto 0;
+  padding: 0;
+  background: transparent;
+}
+
+.editorial-email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.editorial-form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 16px;
+}
+
+.editorial-label {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.editorial-input,
+.editorial-textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  padding: 8px 0 16px 0;
+  width: 100%;
+  resize: none;
+  border-radius: 0;
+  transition: border-color 0.4s ease;
+  line-height: 1.6;
+}
+
+.editorial-input:focus,
+.editorial-textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+/* Fix for Chrome autocomplete white background */
+.editorial-input:-webkit-autofill,
+.editorial-textarea:-webkit-autofill,
+.editorial-input:-webkit-autofill:hover, 
+.editorial-input:-webkit-autofill:focus, 
+.editorial-input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-dark-green) inset !important;
+  -webkit-text-fill-color: var(--white) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.editorial-input::placeholder,
+.editorial-textarea::placeholder {
+  color: var(--grey);
+  opacity: 0.4;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.editorial-textarea {
+  min-height: 80px;
+}
+
+.editorial-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 12px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: fit-content;
+  align-self: flex-start;
+  text-transform: lowercase;
+  border-radius: 999px;
+  margin-top: 16px;
+}
+
+.editorial-submit-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--black);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--green-rgb), 0.2);
+}
+
+.editorial-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(var(--green-rgb), 0.1);
+}
+
+.editorial-submit-btn:disabled {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+

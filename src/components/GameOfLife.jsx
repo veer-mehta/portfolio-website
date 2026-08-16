@@ -3,8 +3,8 @@ import { useRef, useEffect } from 'react';
 const CELL_SIZE = 10;
 
 function createGrid(cols, rows) {
-  const grid = [];
-  for (let i = 0; i < cols * rows; i++) {
+  const grid = new Float32Array(cols * rows);
+  for (let i = 0; i < grid.length; i++) {
     grid[i] = Math.random() < 0.3 ? 1.0 : 0.0;
   }
   return grid;
@@ -16,6 +16,8 @@ function idx(x, y, cols) {
 
 function stepLife(grid, cols, rows) {
   const next = new Float32Array(cols * rows);
+  let population = 0;
+
   for (let x = 0; x < cols; x++) {
     for (let y = 0; y < rows; y++) {
       let count = 0;
@@ -28,13 +30,17 @@ function stepLife(grid, cols, rows) {
         }
       }
       const alive = grid[idx(x, y, cols)] > 0.5;
-      next[idx(x, y, cols)] = (alive && (count === 2 || count === 3)) || (!alive && count === 3) ? 1.0 : 0.0;
+      const willLive = (alive && (count === 2 || count === 3)) || (!alive && count === 3);
+      if (willLive) {
+        next[idx(x, y, cols)] = 1.0;
+        population++;
+      }
     }
   }
-  return next;
+  return { next, population };
 }
 
-export default function GameOfLife() {
+export default function GameOfLife({ onStats }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -44,6 +50,7 @@ export default function GameOfLife() {
 
     let cols, rows, current, display, animId;
     let lastStep = 0;
+    let generation = 0;
     const STEP_INTERVAL = 300;
     const LERP_SPEED = 0.04;
 
@@ -114,7 +121,18 @@ export default function GameOfLife() {
     const render = (timestamp) => {
       if (timestamp - lastStep > STEP_INTERVAL) {
         lastStep = timestamp;
-        current = stepLife(current, cols, rows);
+        const result = stepLife(current, cols, rows);
+        current = result.next;
+        generation++;
+
+        if (onStats) {
+          const totalCells = cols * rows;
+          onStats({
+            generation,
+            population: result.population,
+            density: ((result.population / totalCells) * 100).toFixed(1),
+          });
+        }
       }
 
       for (let i = 0; i < display.length; i++) {
@@ -127,7 +145,7 @@ export default function GameOfLife() {
         for (let y = 0; y < rows; y++) {
           const val = display[idx(x, y, cols)];
           if (val > 0.01) {
-            ctx.fillStyle = `rgba(0, 255, 100, ${val * 0.16})`;
+            ctx.fillStyle = `rgba(34, 197, 94, ${val * 0.4})`;
             ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE - 1, CELL_SIZE - 1);
           }
         }
@@ -144,7 +162,7 @@ export default function GameOfLife() {
       window.removeEventListener('mousemove', handlePointerMove);
       window.removeEventListener('touchmove', handlePointerMove);
     };
-  }, []);
+  }, [onStats]);
 
   return (
     <canvas

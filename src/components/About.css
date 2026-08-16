@@ -38,7 +38,7 @@
 
 .about-block-body {
 	font-family: var(--font-mono);
-	font-size: 1.08rem;
+	font-size: 0.95rem;
 	line-height: 1.8;
 	color: rgb(var(--white-rgb) / 0.78);
 	margin: 0;

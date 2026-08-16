@@ -7,6 +7,7 @@ const MENU_ITEMS = [
 	{ id: "projects", label: "projects", sectionId: "projects" },
 	{ id: "skills", label: "skills", sectionId: "skills" },
 	{ id: "about", label: "about", sectionId: "about" },
+	{ id: "contact", label: "contact", sectionId: "contact-form-section" },
 ];
 
 export default function Navbar() {
@@ -42,15 +43,15 @@ export default function Navbar() {
 					return;
 				}
 
-				const sections = ["projects", "skills", "about"];
+				const sections = MENU_ITEMS.filter(item => item.id !== "home");
 				let currentSection = "home";
 
-				for (const sectionId of sections) {
-					const el = document.getElementById(sectionId);
+				for (const item of sections) {
+					const el = document.getElementById(item.sectionId);
 					if (el) {
 						const rect = el.getBoundingClientRect();
 						if (rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.4) {
-							currentSection = sectionId;
+							currentSection = item.id;
 							break;
 						}
 					}

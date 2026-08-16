@@ -7,6 +7,7 @@
 	overflow: hidden;
 	background-color: var(--bg-primary);
 	isolation: isolate;
+	z-index: 2;
 }
 
 .hero::before {
@@ -14,11 +15,9 @@
 	position: absolute;
 	inset: 0;
 	z-index: 1;
-	background: linear-gradient(90deg, rgb(var(--black-rgb) / 0.85) 0%, rgb(var(--black-rgb) / 0.3) 60%, transparent 100%);
+	background: linear-gradient(90deg, rgb(var(--black-rgb) / 0.95) 0%, rgb(var(--black-rgb) / 0.7) 45%, transparent 100%);
 	pointer-events: none;
 }
-
-
 
 .hero-container {
 	max-width: 1120px;
@@ -43,14 +42,14 @@
 	flex-wrap: wrap;
 	gap: 10px;
 	margin-bottom: 20px;
-	color: var(--tertiary);
 	font-family: var(--font-mono);
 	font-size: 0.82rem;
 	font-weight: 700;
 	text-transform: lowercase;
+	cursor: default;
 }
 
-.hero-eyebrow span {
+.hero-eyebrow-pill {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -59,6 +58,19 @@
 	padding: 6px 14px;
 	background: rgb(var(--black-rgb) / 0.36);
 	line-height: 1;
+	color: var(--tertiary);
+	font-family: var(--font-mono);
+	font-size: 0.82rem;
+	font-weight: 700;
+	white-space: nowrap;
+	transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+	user-select: none;
+}
+
+.hero-eyebrow-pill.active {
+	border-color: var(--border-color);
+	color: var(--white);
+	background: rgb(var(--black-rgb) / 0.55);
 }
 
 .hero-content.show {
@@ -79,7 +91,7 @@
 .hero-summary {
 	font-family: var(--font-mono);
 	color: var(--muted);
-	font-size: 1.15rem;
+	font-size: 1.06rem;
 	line-height: 1.8;
 	max-width: 740px;
 	margin: 18px 0 0;
